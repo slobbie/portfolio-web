@@ -18,10 +18,6 @@ export const TechRow = styled(motion.div)`
   padding: var(--space-6) 0;
   border-bottom: var(--border-hairline) solid var(--line);
 
-  &:first-of-type {
-    border-top: var(--border-hairline) solid var(--line-strong);
-  }
-
   h3 {
     color: var(--text-soft);
     font-size: var(--text-base);

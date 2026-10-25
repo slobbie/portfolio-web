@@ -21,14 +21,14 @@ export const Hero = styled.section`
 
 export const HeroCopy = styled(motion.div)``;
 
-export const HeroTitle = styled(motion.h1)`
+export const HeroTitle = styled(motion.div)`
   display: flex;
   flex-direction: column;
   align-items: flex-start;
   gap: var(--space-6);
 `;
 
-export const HeroRole = styled(motion.span)`
+export const HeroRole = styled(motion.p)`
   display: block;
   color: var(--text);
   font-size: var(--text-title);
@@ -38,7 +38,7 @@ export const HeroRole = styled(motion.span)`
 
 `;
 
-export const HeroName = styled(motion.span)`
+export const HeroName = styled(motion.h1)`
   display: block;
   margin-top: 0;
   font-size: var(--text-display);
