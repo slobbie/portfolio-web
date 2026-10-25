@@ -20,9 +20,27 @@ type ExperienceItemProps = {
   reveal: { variants: Variants };
 };
 
+type HighlightGroup = {
+  title: string;
+  items: string[];
+};
+
+function groupHighlights(highlights: readonly string[]): HighlightGroup[] {
+  return highlights.reduce<HighlightGroup[]>((groups, highlight) => {
+    if (highlight.endsWith(':')) {
+      groups.push({ title: highlight, items: [] });
+      return groups;
+    }
+
+    groups.at(-1)?.items.push(highlight);
+    return groups;
+  }, []);
+}
+
 /** 활성 판정은 행마다 자기 위치를 재야 해서 항목을 컴포넌트로 분리합니다. */
 function ExperienceItem({ experience, index, reveal }: ExperienceItemProps) {
   const { ref, focused } = useViewportFocus();
+  const highlightGroups = groupHighlights(experience.highlights);
 
   return (
     <ExperienceCard
@@ -43,8 +61,15 @@ function ExperienceItem({ experience, index, reveal }: ExperienceItemProps) {
           <time>{experience.duration}</time>
         </ExperienceTitle>
         <ExperienceHighlights className="experience-highlights">
-          {experience.highlights.map((highlight) => (
-            <li key={highlight}>{highlight}</li>
+          {highlightGroups.map((group) => (
+            <li key={group.title}>
+              <strong>{group.title}</strong>
+              <ul>
+                {group.items.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </li>
           ))}
         </ExperienceHighlights>
         <TagList items={experience.tech} />

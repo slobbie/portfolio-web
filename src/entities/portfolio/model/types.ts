@@ -33,10 +33,15 @@ export type CareerProject = {
   roleHeading?: string;
   roles: readonly string[];
   approach: readonly string[];
-  keyWork: readonly string[];
+  keyWork: readonly CareerProjectDetail[];
   resultsHeading?: string;
   results: readonly string[];
   tech: readonly string[];
+};
+
+export type CareerProjectDetail = {
+  title: string;
+  paragraphs: readonly string[];
 };
 
 type GiggyFlowChapter = {

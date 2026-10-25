@@ -119,6 +119,22 @@ export const Block = styled(motion.section)<{
       background: var(--muted);
       content: '';
     }
+
+    strong,
+    span {
+      display: block;
+    }
+
+    strong {
+      margin-bottom: var(--space-2);
+      color: var(--text);
+      font-size: var(--text-sm);
+      font-weight: 600;
+    }
+
+    span + span {
+      margin-top: var(--space-2);
+    }
   }
 
   ${media.mobile} {
