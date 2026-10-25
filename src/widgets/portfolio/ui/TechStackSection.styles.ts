@@ -16,7 +16,14 @@ export const TechRow = styled(motion.div)`
   gap: var(--space-12);
   align-items: center;
   padding: var(--space-6) 0;
-  border-bottom: var(--border-hairline) solid var(--line);
+
+  &:first-of-type {
+    border-top: var(--border-hairline) solid var(--line-strong);
+  }
+
+  &:not(:last-of-type) {
+    border-bottom: var(--border-hairline) solid var(--line);
+  }
 
   h3 {
     color: var(--text-soft);

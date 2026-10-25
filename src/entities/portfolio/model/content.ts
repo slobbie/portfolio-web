@@ -59,7 +59,7 @@ export const professionalSummary = [
 export const techGroups = [
   {
     label: 'Skills',
-    items: ['TypeScript', 'React Native', 'React', 'WebSocket', 'Node.js'],
+    items: ['TypeScript', 'React Native', 'React', 'Next.js', 'WebSocket', 'Node.js'],
   },
 ] satisfies readonly TechGroup[];
 
