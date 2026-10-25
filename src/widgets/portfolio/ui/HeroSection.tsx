@@ -53,7 +53,7 @@ export function HeroSection() {
       <HeroCopy className="hero-copy" {...group}>
         <HeroTitle className="hero-title" {...nested}>
           <HeroRole className="hero-role" {...item}>
-            Frontend Developer
+            Product Engineer
           </HeroRole>
           <HeroName className="hero-name">
             <SplitText text="정해석" delayChildren={0.19} />
