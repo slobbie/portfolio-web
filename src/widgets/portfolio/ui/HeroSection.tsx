@@ -60,7 +60,7 @@ export function HeroSection() {
           </HeroName>
         </HeroTitle>
         <HeroKicker className="hero-kicker" {...item}>
-          반복되는 문제를 자동화하고 재사용 가능한 구조를 만드는 개발자
+          제품의 문제를 해결하고, 반복되는 작업을 자동화와 재사용 가능한 구조로 개선하는 개발자
         </HeroKicker>
         <HeroLinks className="hero-links" aria-label="연락처 및 외부 링크" {...item}>
           <HeroContact href={`mailto:${EMAIL}`}>{EMAIL}</HeroContact>

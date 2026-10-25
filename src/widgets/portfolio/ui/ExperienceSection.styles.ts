@@ -131,13 +131,30 @@ export const ExperienceTitle = styled.div`
 
 export const ExperienceHighlights = styled.ul`
   display: grid;
-  gap: var(--space-3);
+  gap: var(--space-5);
   max-width: 900px;
   color: var(--text-soft);
   line-height: 1.75;
   list-style: none;
 
-  li {
+  > li {
+    display: grid;
+    gap: var(--space-2);
+  }
+
+  strong {
+    color: var(--text);
+    font-weight: 600;
+  }
+
+  ul {
+    display: grid;
+    gap: var(--space-3);
+    padding-left: var(--space-5);
+    list-style: none;
+  }
+
+  ul li {
     position: relative;
     padding-left: var(--space-5);
     word-break: keep-all;

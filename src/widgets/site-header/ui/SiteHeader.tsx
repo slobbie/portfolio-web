@@ -16,7 +16,8 @@ const NAV_ATTRIBUTE = 'data-nav-section';
 
 const NAV_ITEMS = [
   { id: 'career', label: 'Career', href: '#career' },
-  { id: 'labs', label: 'Labs', href: '#labs' },
+  // 이번 배포에서는 Labs 섹션과 함께 내비게이션 항목도 숨깁니다.
+  // { id: 'labs', label: 'Labs', href: '#labs' },
 ] as const;
 
 /** 진행 선이 휠 입력을 그대로 따라가면 눈금처럼 튀어 보입니다. */

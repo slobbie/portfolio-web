@@ -4,7 +4,6 @@ import {
   ExperienceSection,
   GiggySection,
   HeroSection,
-  LabsSection,
   SummarySection,
   TechStackSection,
 } from '@/widgets/portfolio';
@@ -36,7 +35,8 @@ export function PortfolioPage() {
             <CareerSection />
             <GiggySection />
             <AdditionalInformationSection />
-            <LabsSection />
+            {/* 이번 배포에서는 Labs를 숨깁니다. 다음 공개 시 LabsSection을 복구합니다. */}
+            {/* <LabsSection /> */}
           </main>
         </SiteShell>
       </ContentStage>

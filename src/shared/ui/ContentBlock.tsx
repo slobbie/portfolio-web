@@ -5,12 +5,21 @@ import { CountingText } from '@/shared/ui/CountingText';
 type ContentBlockProps = {
   title?: string;
   paragraphs?: readonly string[];
-  items?: readonly string[];
+  items?: readonly (string | ContentBlockItem)[];
   tone?: 'default' | 'accent';
   variant?: 'default' | 'card';
   /** 항목에 섞인 숫자를 0부터 올립니다. 수치가 결과인 블록에만 씁니다. */
   count?: boolean;
 };
+
+type ContentBlockItem = {
+  title: string;
+  paragraphs: readonly string[];
+};
+
+function isContentBlockItem(item: string | ContentBlockItem): item is ContentBlockItem {
+  return typeof item !== 'string';
+}
 
 export function ContentBlock({
   title,
@@ -40,9 +49,18 @@ export function ContentBlock({
       ))}
       {items.length > 0 && (
         <ul>
-          {items.map((item) => (
-            <li key={item}>{count ? <CountingText>{item}</CountingText> : item}</li>
-          ))}
+          {items.map((item) =>
+            isContentBlockItem(item) ? (
+              <li key={item.title}>
+                <strong>{item.title}</strong>
+                {item.paragraphs.map((paragraph) => (
+                  <span key={paragraph}>{paragraph}</span>
+                ))}
+              </li>
+            ) : (
+              <li key={item}>{count ? <CountingText>{item}</CountingText> : item}</li>
+            ),
+          )}
         </ul>
       )}
     </Block>
