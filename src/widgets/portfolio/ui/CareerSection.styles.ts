@@ -223,6 +223,10 @@ export const CareerProjectTitle = styled.header`
     }
   }
 
+  h3[data-dense='true'] {
+    font-size: clamp(1.8rem, 2.8vw, 2.8rem);
+  }
+
   time {
     display: block;
     margin-top: var(--space-5);
@@ -242,6 +246,10 @@ export const CareerProjectTitle = styled.header`
       span {
         display: inline;
       }
+    }
+
+    h3[data-dense='true'] {
+      font-size: clamp(2rem, 10vw, 2.75rem);
     }
   }
 `;

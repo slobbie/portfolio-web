@@ -69,7 +69,10 @@ function CareerArticle({
         <p>
           {String(index + 1).padStart(2, '0')} / {String(total).padStart(2, '0')}
         </p>
-        <h3 data-compound={Boolean(titleDescription)}>
+        <h3
+          data-compound={Boolean(titleDescription)}
+          data-dense={project.title.length > 35}
+        >
           {titleDescription ? (
             <>
               <span className="career-project-name">{titleName}</span>
